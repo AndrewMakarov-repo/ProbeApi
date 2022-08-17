@@ -11,11 +11,11 @@ namespace ProbeApi
         {
         }
         [TestCase("nl", "1020", HttpStatusCode.OK)]
-        [TestCase("li", "0005", HttpStatusCode.NotFound)]
         [TestCase("lt", "00001", HttpStatusCode.OK)]
+        [TestCase("li", "0005", HttpStatusCode.NotFound)]
         [TestCase("ru", "1000", HttpStatusCode.NotFound)]
         [TestCase("ru", "5", HttpStatusCode.NotFound)]
-        public void StatusCodeTest(string countryCode, string zipCode, HttpStatusCode expectedHttpStatusCode)
+        public void StatusCodeVerification(string countryCode, string zipCode, HttpStatusCode expectedHttpStatusCode)
         {
             // arrange
             RestClient client = new RestClient("http://api.zippopotam.us");
